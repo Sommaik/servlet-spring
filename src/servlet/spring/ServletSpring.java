@@ -6,9 +6,12 @@
 package servlet.spring;
 
 import servlet.spring.bean.Animal;
+import servlet.spring.bean.Bird;
 import servlet.spring.bean.Cat;
+import servlet.spring.bean.Circus;
 import servlet.spring.bean.Mamal;
 import servlet.spring.bean.Dog;
+import servlet.spring.bean.Duck;
 /**
  *
  * @author sommaik
@@ -44,12 +47,18 @@ public class ServletSpring {
 //          
 //          ((Cat)c).walk();
           
-          Mamal m = new Dog();
-          m.feed();
-          System.out.println( m.say() );
+//          Mamal m = new Dog();
+//          m.feed();
+//          System.out.println( m.say() );
+//          
+//          Mamal c = new Cat();
+//          c.feed();
           
-          Mamal c = new Cat();
-          c.feed();
+          Duck d = new Duck();
+          Bird b = new Bird();
+          Circus c = new Circus();
+          c.showFlyAnimal(d);
+          c.showFlyAnimal(b);
         
     }
     
