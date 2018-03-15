@@ -23,4 +23,17 @@ public class Duck extends Animal implements CanFly, CanSwim {
       System.out.println("Duck can swim");  
     }
     
+    public void eat(){
+       System.out.println("Duck can eat thing");   
+    }
+    
+    public void eat(String food){
+        System.out.println("Duck can eat "+food);
+    }
+    
+    public void eat(int some){
+        this.eat("fish");
+        System.out.println("Duck can eat "+some);
+    }
+    
 }

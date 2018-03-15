@@ -14,4 +14,8 @@ public class Animal {
     public String say(){
         return "Hello";
     }
+    
+    public final void walk(){
+        System.out.println("Animal can walk");
+    }
 }

@@ -11,10 +11,6 @@ package servlet.spring.bean;
  */
 public class Cat extends Mamal {
     
-    public void walk(){
-        System.out.println("Cat can walk");
-    }
-    
     public String say(){
         return "Hello from cat";
     } 

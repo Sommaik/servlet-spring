@@ -5,13 +5,14 @@
  */
 package servlet.spring;
 
-import servlet.spring.bean.Animal;
-import servlet.spring.bean.Bird;
-import servlet.spring.bean.Cat;
-import servlet.spring.bean.Circus;
-import servlet.spring.bean.Mamal;
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.Map;
+import java.util.HashMap;
 import servlet.spring.bean.Dog;
-import servlet.spring.bean.Duck;
 /**
  *
  * @author sommaik
@@ -54,11 +55,45 @@ public class ServletSpring {
 //          Mamal c = new Cat();
 //          c.feed();
           
-          Duck d = new Duck();
-          Bird b = new Bird();
-          Circus c = new Circus();
-          c.showFlyAnimal(d);
-          c.showFlyAnimal(b);
+//          Duck d = new Duck();
+//          Bird b = new Bird();
+//          Circus c = new Circus();
+//          c.showFlyAnimal(d);
+//          c.showFlyAnimal(b);
+
+//            java.util.List<Duck> ducks = new ArrayList();
+//            
+//            for(int i = 0; i<10; i++){
+//                ducks.add(new Duck());
+//            }
+//            
+//            System.out.println(ducks.size());
+//            ducks.get(9).fly();
+//            ducks.remove(0);
+//            
+//            System.out.println(ducks.size());
+//            ducks.get(9).fly();
+////            ((Duck)ducks.get(10)).fly();
+
+        Map<String, Dog> dogs = new HashMap<>();
+        
+        String[] dogName = new String[]{ "Jimmy", "Johny", "Jame", "Indy" };
+        
+        for(int i=0; i<dogName.length; i++){
+            dogs.put( dogName[i], new Dog(dogName[i]));
+            System.out.println( dogs.get(dogName[i]) );
+        }
+        try{
+            InputStream fis = new FileInputStream(
+                "/Users/sommaik/NetBeansProjects/servlet-spring/.gitignore"
+            );
+            InputStreamReader bis = new InputStreamReader(fis);
+            BufferedReader br = new BufferedReader(bis);
+            System.out.println(  br.readLine() );
+            
+        }catch(Exception e){
+            e.printStackTrace();
+        }
         
     }
     
