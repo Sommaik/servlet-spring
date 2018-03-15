@@ -16,8 +16,16 @@ public class ServletSpring {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Kyle k = new Kyle("John");
-        System.out.println(k.sayHello());
+//        Kyle k = new Kyle("John");
+//        System.out.println(k.sayHello());
+        
+        Kyle[] arr;
+        arr = new Kyle[2];
+        arr[0] = new Kyle("John");
+        arr[1] = new Kyle("Jimmy");
+        
+        System.out.println(arr[0].sayHello());
+        
     }
     
 }

@@ -13,6 +13,8 @@ public class Kyle {
     
 //    Kyle(){}
 //  
+    public static String prefix = "Hello";
+    
     String name;
     
     Kyle(String name){
