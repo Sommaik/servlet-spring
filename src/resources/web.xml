@@ -4,10 +4,30 @@
     <servlet-name>Hello</servlet-name>
      <servlet-class>servlet.spring.controllers.HelloWorld</servlet-class>
    </servlet>
+   
+   <servlet>
+     <servlet-name>Login</servlet-name>
+     <servlet-class>servlet.spring.controllers.Login</servlet-class>
+   </servlet>
+   
+   <servlet>
+     <servlet-name>LoginService</servlet-name>
+     <servlet-class>servlet.spring.controllers.LoginService</servlet-class>
+   </servlet>
 
   <servlet-mapping>
     <servlet-name>Hello</servlet-name>
     <url-pattern>/helloworld</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>Login</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>LoginService</servlet-name>
+    <url-pattern>/loginService</url-pattern>
   </servlet-mapping>
 
 </web-app>
