@@ -70,4 +70,11 @@
     nbproject/build-impl.xml file. 
 
     -->
+    <target name="-post-compile">
+        <copy todir="${build.dir}">
+            <fileset dir="${src.dir}/resources"></fileset>
+        </copy>
+
+    </target>
+    
 </project>

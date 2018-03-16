@@ -8,10 +8,14 @@ package servlet.spring;
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import servlet.spring.bean.Dog;
 /**
  *
@@ -89,10 +93,16 @@ public class ServletSpring {
             );
             InputStreamReader bis = new InputStreamReader(fis);
             BufferedReader br = new BufferedReader(bis);
-            System.out.println(  br.readLine() );
+            do {
+              System.out.println(  
+                  br.readLine() 
+              );  
+            }while(br.ready());
             
-        }catch(Exception e){
-            e.printStackTrace();
+        }catch(FileNotFoundException fno){
+            fno.printStackTrace();
+        } catch (IOException ex) {
+            Logger.getLogger(ServletSpring.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     }
