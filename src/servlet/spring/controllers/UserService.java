@@ -17,6 +17,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import servlet.spring.bean.User;
 
 /**
  *
@@ -61,24 +62,26 @@ public class UserService extends HttpServlet {
                     " user_dob "+
                " FROM sc_user "
             );
-            ArrayList<Map> users = new ArrayList();
+            ArrayList<User> users = new ArrayList();
             while(res.next()){
-                Map<String, String> user = new HashMap();
-                user.put("code", res.getString("user_code"));
-                user.put("age", res.getString("user_age"));
-                user.put("fistName", res.getString("user_first_name"));
-                user.put("lastName", res.getString("user_last_name"));
-                user.put("dob", res.getString("user_dob"));
+                User user = new User(
+                    res.getString("user_code"),
+                    res.getString("user_first_name"),
+                    res.getString("user_last_name"),
+                    res.getInt("user_age"),
+                    res.getString("user_dob")
+                );
                 users.add(user);
             }
             res.close();
             stmt.close();
             con.close(); 
             request.setAttribute("userdata", users);
+            System.out.println(" user size = "+users.size());
         }catch(Exception e){
             e.printStackTrace();
         }
         
-        request.getRequestDispatcher("/jsp/listuser.jsp").forward(request, response);
+        request.getRequestDispatcher("/jsp/listuser2.jsp").forward(request, response);
     }
 }

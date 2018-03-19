@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ page import="java.util.ArrayList"%>
-<%@ page import="servlet.spring.bean.User"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
     <head>
         <!--Import Google Icon Font-->
@@ -26,30 +25,37 @@
                 <a href="#" class="brand-logo">List User</a>
             </div>
         </nav>
-        <%ArrayList<User> userdata = (ArrayList<User>)request.getAttribute("userdata"); %>
+
         <table>
             <thead>
-            <tr>
-                <th>Code</th>
-                <th>Fist Name</th>
-                <th>Last Name</th>
-                <th>BOD</th>
-                <th>Age</th>
-            </tr>
+                <tr>
+                    <th>Code</th>
+                    <th>Fist Name</th>
+                    <th>Last Name</th>
+                    <th>DOB</th>
+                    <th>Age</th>
+                </tr>
             </thead>
             <tbody>
-        <% for(int i=0; i<userdata.size(); i++) { 
-          User user = userdata.get(i);
-        %>
-        <tr>
-            <td><%=user.getCode()%></td>
-            <td><%=user.getFirstName()%></td>
-            <td><%=user.getLastName()%></td>
-            <td><%=user.getDob()%></td>
-            <td><%=user.getAge()%></td>
-        </tr>
-        <% } %>
+                <c:forEach items="${userdata}" var="user">
+                    <tr>
+                        <td><c:out value="${user.code}" /></td>
+                        <td><c:out value="${user.firstName}" /></td>
+                        <td><c:out value="${user.lastName}" /></td>
+                        <td><c:out value="${user.dob}" /></td>
+                        <td><c:out value="${user.age}" /></td>
+                    </tr>
+                </c:forEach>
             </tbody>
         </table>
+        
+        <a href="jsp/userForm.jsp" 
+           class="btn-floating btn-large waves-effect waves-light red right">
+            <i class="material-icons">add</i>
+        </a>
+        <!-- 
+        # Advance #
+        Display success or error message from save user service 
+        -->
     </body>
 </html>
