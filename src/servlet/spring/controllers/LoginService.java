@@ -80,7 +80,7 @@ public class LoginService extends HttpServlet {
             request.getRequestDispatcher("/helloworld").forward(request, response);
         }else{
             request.setAttribute("error", "User or password not found");
-            request.getRequestDispatcher("/login").forward(request, response);
+            request.getRequestDispatcher("/jsp/index.jsp").forward(request, response);
         }
     }
 }

@@ -28,31 +28,37 @@
                 </ul>
             </div>
         </nav>
+        
+        <% if(request.getAttribute("error") != null) { %>
+        <div>
+            <h1><%=request.getAttribute("error")%></h1>
+        </div>
+        <%}%>
+        
+        <div class="container row">
+            <form class="col s12" method="POST" action="loginService">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="Place your user id" id="first_name" type="text" class="validate" name="userid">
+                        <label for="first_name">User Id</label>
+                    </div>
+                </div>
 
-    <div class="container row">
-        <form class="col s12" method="POST" action="loginService">
-            <div class="row">
-                <div class="input-field col s12">
-                    <input placeholder="Place your user id" id="first_name" type="text" class="validate" name="userid">
-                    <label for="first_name">User Id</label>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="password" type="password" class="validate" name="pwd">
+                        <label for="password">Password</label>
+                    </div>
                 </div>
-            </div>
 
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="password" type="password" class="validate" name="pwd">
-                    <label for="password">Password</label>
+                <div class="row">
+                    <div class="col s12">
+                        <button type="submit" class="waves-effect waves-light btn">
+                            <i class="material-icons left">lock_open</i>Login</button>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="row">
-                <div class="col s12">
-                     <button type="submit" class="waves-effect waves-light btn">
-                        <i class="material-icons left">lock_open</i>Login</button>
-                </div>
-            </div>
-        </form>
-    </div>
+            </form>
+        </div>
 
     </body>
 </html>
