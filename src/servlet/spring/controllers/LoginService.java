@@ -77,7 +77,7 @@ public class LoginService extends HttpServlet {
             user.put("dob", "01 Jan 2001");
             /*End your logic*/
             request.setAttribute("user", user);
-            request.getRequestDispatcher("/helloworld").forward(request, response);
+            request.getRequestDispatcher("/userService").forward(request, response);
         }else{
             request.setAttribute("error", "User or password not found");
             request.getRequestDispatcher("/jsp/index.jsp").forward(request, response);
