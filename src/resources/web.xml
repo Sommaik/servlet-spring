@@ -29,5 +29,9 @@
     <servlet-name>LoginService</servlet-name>
     <url-pattern>/loginService</url-pattern>
   </servlet-mapping>
+  
+  <welcome-file-list>
+      <welcome-file>/jsp/index.jsp</welcome-file>
+  </welcome-file-list>
 
 </web-app>
